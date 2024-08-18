@@ -14,7 +14,7 @@ if ( $semaine_nb = filter_input(INPUT_GET, 'page', FILTER_VALIDATE_INT) ) {
     $jour = new DateTime('last sunday');
     $jour->modify($ajoutsemaine);
     $jour->modify('-1 day');
-    for ($i=0; $i < 7 ; $i++) { 
+    for ($i=0; $i < 3 ; $i++) { 
             
         $jour->modify('+1 day');
         $textes = array();
@@ -171,9 +171,11 @@ if ( $semaine_nb = filter_input(INPUT_GET, 'page', FILTER_VALIDATE_INT) ) {
             <p><?php print_r($textes["lectures"]["lectures"]["texte_patristique"]); ?></p>
             <p class="titre3">Répons</p>
             <p><?php print_r( $textes["lectures"]["lectures"]["repons_patristique"] ) ; ?></p>
-            <p class="titre3"><?php print_r($textes["messes"]["messes"][0]["lectures"][3]['intro_lue']); ?></p>
-            <p><?php print_r( $textes["messes"]["messes"][0]["lectures"][3]['ref'] ) ; ?></p>
-            <p><?php print_r( $textes["messes"]["messes"][0]["lectures"][3]['contenu'] ) ; ?></p>
+            <?php $evang = count($textes['messes']['messes'][0]['lectures']) ;
+                    $evang-- ;?>
+            <p class="titre3"><?php print_r($textes["messes"]["messes"][0]["lectures"][$evang]['intro_lue']); ?></p>
+            <p><?php print_r( $textes["messes"]["messes"][0]["lectures"][$evang]['ref'] ) ; ?></p>
+            <p><?php print_r( $textes["messes"]["messes"][0]["lectures"][$evang]['contenu'] ) ; ?></p>
             <p class="titre3">Oraison 15 minutes</p>
             <p class="titre3">Antienne de Zacharie</p>
             <p><?php print_r($cet_office["antienne_zacharie"]); ?></p>
