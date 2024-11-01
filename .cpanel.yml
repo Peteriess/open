@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/thomasm/public_html/malenfant.zone/tXts/
+    - /bin/cp -R * $DEPLOYPATH
+    
