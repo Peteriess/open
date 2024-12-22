@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/thomasm/public_html/malenfant.zone/tXts/
+    - export DEPLOYPATH=/home/thomasm/public_html/malenfant.zone/tXts_dev/
     - /bin/cp -R * $DEPLOYPATH
     
